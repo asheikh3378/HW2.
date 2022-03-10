@@ -1,0 +1,16 @@
+input_file = input()
+
+import csv
+
+with open(input_file) as csv_file:
+  data = csv.reader(csv_file, delimiter=',')
+  dictionary = {}
+  for row in data:
+    for string in row:
+      if string in dictionary:
+        dictionary[string] += 1
+      else:
+        dictionary[string] = 1
+
+for key in dictionary:
+  print(f"{key} {dictionary[key]}")
