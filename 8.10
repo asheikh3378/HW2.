@@ -1,0 +1,20 @@
+def palindrome(str):
+    x, y=0, len(str) - 1
+    str = str.lower()
+    while x <= y:
+        if not('a' <= str[x] <= 'z'):
+            x += 1
+        elif not('a' <= str[y] <= 'z'):
+            y -= 1
+        elif str[x] == str[y]:
+           x += 1
+           y -= 1
+        else:
+            return False
+
+    return True
+strr = input()
+if palindrome(strr):
+    print ((strr), "is a palindrome")
+else:
+    print ((strr), "is not a palindrome")
